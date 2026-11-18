@@ -1,0 +1,24 @@
+<svg xmlns="http://w3.org" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Chart Vertical Axis & Bottom Base -->
+  <path d="M16 14 V102 H100 C105.5 102 108 98.5 108 93 V80" stroke="#0E7484" stroke-width="7.5" stroke-linecap="square" stroke-linejoin="round"/>
+
+  <!-- Wallet Left Vertical Wall (Below Trend Line) -->
+  <path d="M33 74 V93 C33 98.5 36.5 102 42 102" stroke="#0E7484" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Wallet Top Left Corner & Tilted Bill/Card Inside -->
+  <path d="M33 53 V43 C33 38.5 35.5 36 39.5 34 L76 16 L84 32" stroke="#0E7484" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Wallet Top Horizontal Rim (Split by Trend Line) -->
+  <path d="M55 43 H70" stroke="#0E7484" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M92 43 H100 C105.5 43 108 46.5 108 52 V63" stroke="#0E7484" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Wallet Clasp & Button -->
+  <path d="M111 63 H94 C87.5 63 83 66.8 83 71.5 C83 76.2 87.5 80 94 80 H111 V63 Z" stroke="#0E7484" stroke-width="7.5" stroke-linejoin="round"/>
+  <circle cx="94" cy="71.5" r="4" fill="#0E7484"/>
+
+  <!-- Rising Growth Trend Line -->
+  <path d="M16 82 L45 49 L62 67 L99 24" stroke="#0E7484" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Trend Line Arrowhead -->
+  <polygon points="109,13 85,20 103,37" fill="#0E7484"/>
+</svg>

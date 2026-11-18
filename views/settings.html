@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — BudgetWise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/homepage.css" />
+</head>
+<body class="dash-body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/dashboard.html" class="logo"><img src="/Logo.jpeg" alt="" class="logo-img" /> BudgetWise</a>
+      <div class="user-menu">
+        <button type="button" class="menu-btn" id="menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="menu">
+          <span class="avatar" id="menu-avatar" aria-hidden="true"></span>
+          <span class="menu-name" id="who"></span>
+          <span class="caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="menu" id="menu" hidden>
+          <a href="/dashboard.html">Dashboard</a>
+          <a href="/dashboard.html#add">Add transaction / income</a>
+          <a href="/dashboard.html#colors">Chart colours</a>
+          <a href="/settings.html#categories">Edit categories</a>
+          <a href="/settings.html#profile">Profile &amp; picture</a>
+          <a href="/settings.html#password">Change password</a>
+          <a href="/api/transactions/export.csv">Export my data (CSV)</a>
+          <hr />
+          <button type="button" id="logout-btn">Log out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container dash settings">
+    <h1 class="page-title">Profile &amp; settings</h1>
+
+    <section class="panel" id="profile">
+      <h2>Profile picture</h2>
+      <div class="profile-row">
+        <span class="avatar avatar-lg" id="avatar-preview" aria-hidden="true"></span>
+        <div>
+          <p class="muted" id="profile-names"></p>
+          <div class="btn-row">
+            <label class="btn btn-primary file-btn" for="avatar-file">Choose picture</label>
+            <input type="file" id="avatar-file" accept="image/png,image/jpeg,image/webp" hidden />
+            <button type="button" class="btn btn-ghost" id="avatar-remove">Remove picture</button>
+          </div>
+          <p id="avatar-msg" class="form-msg" role="status" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="categories">
+      <h2>Categories</h2>
+      <p class="muted">The built-in categories are fixed. Add your own, and remove them again if you like.
+        Transactions you already saved keep their category.</p>
+      <div class="cat-cols">
+        <div>
+          <h3>Expense categories</h3>
+          <ul class="chip-list" id="cat-expense"></ul>
+          <form class="inline-form" id="cat-form-expense" novalidate>
+            <label class="sr-only" for="cat-input-expense">New expense category</label>
+            <input id="cat-input-expense" type="text" maxlength="20" placeholder="e.g. Pets" autocomplete="off" />
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+        <div>
+          <h3>Income categories</h3>
+          <ul class="chip-list" id="cat-income"></ul>
+          <form class="inline-form" id="cat-form-income" novalidate>
+            <label class="sr-only" for="cat-input-income">New income category</label>
+            <input id="cat-input-income" type="text" maxlength="20" placeholder="e.g. Freelance" autocomplete="off" />
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+      </div>
+      <p id="cat-msg" class="form-msg" role="status" hidden></p>
+    </section>
+
+    <section class="panel" id="password">
+      <h2>Change password</h2>
+      <form id="pw-form" class="stack-form" novalidate>
+        <label for="pw-current">Current password</label>
+        <input id="pw-current" type="password" autocomplete="current-password" />
+        <label for="pw-new">New password (at least 8 characters)</label>
+        <input id="pw-new" type="password" autocomplete="new-password" />
+        <label for="pw-confirm">Confirm new password</label>
+        <input id="pw-confirm" type="password" autocomplete="new-password" />
+        <p id="pw-msg" class="form-msg" role="status" hidden></p>
+        <button type="submit" class="btn btn-primary">Change password</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/menu.js"></script>
+  <script src="/settings.js"></script>
+</body>
+</html>

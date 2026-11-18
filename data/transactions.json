@@ -1,0 +1,47 @@
+[
+  {
+    "id": "553c4807-6574-4a58-8193-9274d616e5de",
+    "userId": "8c00615e-7eb8-4636-b6c3-d2186f6f2fea",
+    "type": "income",
+    "cents": 200000,
+    "category": "Salary",
+    "date": "2026-11-18",
+    "note": ""
+  },
+  {
+    "id": "ee8cb4c7-1473-48b6-a503-bff910026f55",
+    "userId": "8c00615e-7eb8-4636-b6c3-d2186f6f2fea",
+    "type": "expense",
+    "cents": 2348,
+    "category": "Food",
+    "date": "2026-11-18",
+    "note": "Shaaz"
+  },
+  {
+    "id": "e5125d7f-055d-419e-a11e-cd9a604fb34d",
+    "userId": "8c00615e-7eb8-4636-b6c3-d2186f6f2fea",
+    "type": "expense",
+    "cents": 110000,
+    "category": "Rent",
+    "date": "2026-11-18",
+    "note": ""
+  },
+  {
+    "id": "fc07a39d-4cc0-4368-b2d9-39f824f899ad",
+    "userId": "8c00615e-7eb8-4636-b6c3-d2186f6f2fea",
+    "type": "expense",
+    "cents": 8000,
+    "category": "Shopping",
+    "date": "2026-11-18",
+    "note": ""
+  },
+  {
+    "id": "c4cb3384-b374-4c07-a77d-7c8f4508db86",
+    "userId": "8c00615e-7eb8-4636-b6c3-d2186f6f2fea",
+    "type": "expense",
+    "cents": 6600,
+    "category": "Transport",
+    "date": "2026-11-18",
+    "note": ""
+  }
+]

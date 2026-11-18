@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — BudgetWise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/homepage.css" />
+</head>
+<body class="dash-body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/dashboard.html" class="logo"><img src="/Logo.jpeg" alt="" class="logo-img" /> BudgetWise</a>
+      <div class="user-menu">
+        <button type="button" class="menu-btn" id="menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="menu">
+          <span class="avatar" id="menu-avatar" aria-hidden="true"></span>
+          <span class="menu-name" id="who"></span>
+          <span class="caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="menu" id="menu" hidden>
+          <a href="/dashboard.html">Dashboard</a>
+          <a href="/dashboard.html#add">Add transaction / income</a>
+          <a href="/dashboard.html#colors">Chart colours</a>
+          <a href="/settings.html#categories">Edit categories</a>
+          <a href="/settings.html#profile">Profile &amp; picture</a>
+          <a href="/settings.html#password">Change password</a>
+          <a href="/api/transactions/export.csv">Export my data (CSV)</a>
+          <hr />
+          <button type="button" id="logout-btn">Log out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container dash">
+    <section class="stats">
+      <div class="stat"><span>Remaining balance</span><strong id="stat-balance">$0.00</strong></div>
+      <div class="stat"><span>Total income</span><strong id="stat-income" class="pos">$0.00</strong></div>
+      <div class="stat"><span>Total expenses</span><strong id="stat-expense" class="neg">$0.00</strong></div>
+    </section>
+
+    <section class="pies">
+      <div class="panel">
+        <div class="list-head">
+          <h2>Income by category</h2>
+          <button type="button" class="link-btn" id="colors-btn-income">Colours</button>
+        </div>
+        <div id="colors-income" class="color-editor" hidden></div>
+        <div id="pie-income" class="pie"></div>
+      </div>
+      <div class="panel">
+        <div class="list-head">
+          <h2>Expenses by category</h2>
+          <button type="button" class="link-btn" id="colors-btn-expense">Colours</button>
+        </div>
+        <div id="colors-expense" class="color-editor" hidden></div>
+        <div id="pie-expense" class="pie"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Your account</h2>
+      <dl class="account-grid">
+        <div><dt>Username</dt><dd id="acc-username"></dd></div>
+        <div><dt>Email</dt><dd id="acc-email"></dd></div>
+        <div><dt>Member since</dt><dd id="acc-since"></dd></div>
+        <div><dt>Transactions</dt><dd id="acc-count">0</dd></div>
+      </dl>
+    </section>
+
+    <section class="dash-cols">
+      <div class="panel">
+        <div class="list-head">
+          <h2>Transactions</h2>
+          <div class="filters">
+            <select id="filter-type" aria-label="Filter by type">
+              <option value="all">All types</option><option value="income">Income</option><option value="expense">Expenses</option>
+            </select>
+            <select id="filter-category" aria-label="Filter by category"></select>
+          </div>
+        </div>
+        <p id="filter-summary" class="muted"></p>
+        <ol id="tx-list" class="tx-list"></ol>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Floating "+" button (bottom right) -->
+  <button type="button" id="add-fab" class="fab" aria-label="Add transaction or income" title="Add transaction or income">+</button>
+
+  <!-- Pop-up form: opens when you press the + button or Edit -->
+  <div id="tx-modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="form-title">
+      <h2 id="form-title">Add transaction</h2>
+      <form id="tx-form" class="tx-form" novalidate>
+        <div><label for="tx-type">Type</label>
+          <select id="tx-type"><option value="expense">Expense</option><option value="income">Income</option></select></div>
+        <div><label for="tx-amount">Amount</label>
+          <input id="tx-amount" type="number" step="0.01" min="0.01" placeholder="0.00" /></div>
+        <div><label for="tx-category">Category</label><select id="tx-category"></select></div>
+        <div><label for="tx-date">Date</label><input id="tx-date" type="date" /></div>
+        <div class="wide"><label for="tx-note">Note (optional)</label>
+          <input id="tx-note" type="text" maxlength="100" /></div>
+        <p id="tx-error" class="form-error wide" role="alert" hidden></p>
+        <div class="wide tx-actions">
+          <button type="submit" class="btn btn-primary" id="tx-submit">Add</button>
+          <button type="button" class="btn btn-ghost" id="tx-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/menu.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
