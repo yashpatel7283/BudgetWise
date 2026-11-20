@@ -4,7 +4,7 @@ A simple budgeting website. Visitors can read the public home page; registered u
 
 Course project for **SOEN 287 – Web Programming** (Fall 2026).
 
-**Team:** [your name] (individual project)
+**Team:** Yash Patel (individual project)
 
 ## Tech stack
 
